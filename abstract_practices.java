@@ -1,31 +1,54 @@
 public class abstract_practices {
     public static void main() {
-        Guitar gtr = new Guitar();
-        Piano piano = new Piano();
-
-        System.out.println(piano.build);
-        piano.play();
+        Student std = new Student();
+        std.study();
+        std.sleep();
     }
 
-    abstract static class Instrument {
-        String build = "Wood";
-
-        abstract void play();
+    interface School {
+        void study();
+        void teach();
     }
 
-    static class Guitar extends Instrument {
-        int strings = 6;
+    interface Home {
+        String name = "Lia";
+        void sleep();
+    }
+
+    static class Toddler implements Home {
         @Override
-        void play() {
-            System.out.println("The guitar is playing.");
+        public void sleep () {
+            System.out.println(name + " is sleeping");
         }
     }
 
-    static class Piano extends Instrument {
-        int keys = 88;
+    static class Teacher implements School {
         @Override
-        void play() {
-            System.out.println("The piano is playing.");
+        public void teach() {
+            System.out.println("Teaching.");
+        }
+
+        @Override
+        public void study() {
+            System.out.println("Teacher is not studying but it needs to implement this method too.");
+        }
+    }
+
+    static class Student implements School, Home {
+        String name = "Sae";
+        @Override
+        public void study() {
+            System.out.println(name + " is studying.");
+        }
+
+        @Override
+        public void sleep() {
+            System.out.println("Sleeping.");
+        }
+
+        @Override
+        public void teach() {
+            System.out.println("Student is not teaching but it needs to implement this method too.");
         }
     }
 }
