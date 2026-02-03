@@ -1,4 +1,4 @@
-public class abstract_practices {
+public class inheritance_practice {
     public static void main() {
         Instrument ins = new Instrument();
         Guitar gtr = new Guitar();
@@ -32,3 +32,4 @@ public class abstract_practices {
         }
     }
 }
+
