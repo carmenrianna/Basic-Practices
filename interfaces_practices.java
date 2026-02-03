@@ -1,4 +1,4 @@
-public class abstract_practices {
+public class interfaces_practices {
     public static void main() {
         Student std = new Student();
         std.study();
@@ -52,3 +52,4 @@ public class abstract_practices {
         }
     }
 }
+
